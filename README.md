@@ -1,2 +1,2 @@
 # excel_emails_to_csv
-Finds emails on all of your excel sheets and saves them all to each csv file. 
+Finds emails on all of your excel sheets and saves them each to each csv file. 
