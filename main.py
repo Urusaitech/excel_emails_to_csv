@@ -29,7 +29,7 @@ def convert_bd(file):
             tmp_mails = []
             mails = []
 
-            for lst in check_values:  # i just wanted separate lists
+            for lst in check_values:  # i just wanted to separate lists
                 tmp_mails.extend(lst)
 
             for elem in tmp_mails:  # get all the emails from the current sheet
