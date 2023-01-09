@@ -2,7 +2,7 @@ import pandas as pd
 import os.path
 
 def convert_bd(file):
-    for i in file:
+    for i in file:  # TODO: i == 'sheet'
 
         name = i.rpartition('/')[2]  # prepare a proper name for the output file
         name = name[:name.find(".") + 0]
@@ -39,6 +39,7 @@ def convert_bd(file):
 
             mails_frame = pd.DataFrame(mails)  # save emails as a frame of pandas data
             
+            # try writing a csv file
             try:
                 if mails_frame.empty and not needed_col:
                     print(f'{cur_sheet_name} is empty!')
@@ -52,7 +53,7 @@ def convert_bd(file):
                         new_header = ['e-mail']
                         fix.to_csv(f'{name}{cur_sheet_name}.csv', index=False, header=new_header)
                         print(f'successfully written from {cur_sheet_name}')
-
+                        # TODO: refactor in DRY
                         if needed_col:  # if there was an email in column's name - adds it to the end of csv
                             mails.append(''.join(needed_col))
                             mails_frame = pd.DataFrame(mails)
