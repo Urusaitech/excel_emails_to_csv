@@ -1,6 +1,7 @@
 import pandas as pd
 import os.path
 
+# FIXME: SOLID, DRY, KISS, comments, types
 def convert_bd(file):
     for i in file:  # TODO: i == 'sheet'
 
